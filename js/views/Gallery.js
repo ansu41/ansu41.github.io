@@ -21,6 +21,7 @@ define(
             events: {
                 // 'click .closeButton': 'closeWindow',
                 // 'keyup ': 'closeOnEscape'
+
             },
 
             initialize: function (options) {
@@ -54,7 +55,7 @@ define(
 
             events: {
                 // 'click .zoom': 'zoomImage'
-
+                  'click .gal-nav li ':'galleryNav'
             },
 
 
@@ -67,6 +68,16 @@ define(
                 this.$el.html(this.template());
             },
 
+            galleryNav:function(event){
+                // console.log('product-nav');
+                $('.gal-nav li').removeClass('selected');
+                $(event.currentTarget).addClass('selected');
+                console.log(event.target.innerHTML);
+                var sText=event.target.innerHTML.trim();
+                $('.All').hide();
+                $('.'+sText).show();
+                // console.log(this)
+            },
             
             //to remove sub nav bar
             hide: function () {
