@@ -58,27 +58,28 @@ define(
             showAbout: function () {
                 this.hideOtherViews();
                 this.about.show();
-                this.header.show();
-                this.footer.show();
+                this.showHeadFooter();
             },
 
             showGallery: function () {
                 this.hideOtherViews();
                 this.gallery.show();
-                this.header.show();
-                this.footer.show();
+                this.showHeadFooter();
             },
 
             showContact: function () {
                 this.hideOtherViews();
                 this.contact.show();
-                this.header.show();
-                this.footer.show();
+                this.showHeadFooter();
             },
 
             showBlog: function () {
                 this.hideOtherViews();
                 this.blog.show();
+                this.showHeadFooter();
+            },
+
+            showHeadFooter:function(){
                 this.header.show();
                 this.footer.show();
             },

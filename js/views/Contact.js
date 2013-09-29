@@ -30,15 +30,13 @@ define(
 
 
             initialize: function () {
-                this.render();
+                // this.render();
             },
 
             render: function () {
                 this.$el.html(this.template());
-                
-                this.show();
-
             },
+            
             shareMe: function (event) {
                 var s = event.target.classList[2];
                 switch (s) {
@@ -58,12 +56,15 @@ define(
                 }
             },
             //to remove sub nav bar
-            hide: function () {
+            hide: function () {                
+                $('.ph-contactPage').removeClass('fadeInLeftBig animated');
                 this.$el.hide();
             },
 
             show: function () {
                 this.$el.show();
+                this.render();
+                $('.ph-contactPage').addClass(' fadeInLeftBig animated');
             }
 
 

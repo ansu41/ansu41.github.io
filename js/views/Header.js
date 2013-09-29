@@ -31,7 +31,7 @@ define(
 
 
             initialize: function () {
-                this.render();
+                // this.render();
                 
             },
 
@@ -109,6 +109,7 @@ define(
 
 
             show: function () {
+                this.render();
                 this.$el.show();
                 this.selectedPage();
             },

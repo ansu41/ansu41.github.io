@@ -22,35 +22,29 @@ define(
             template: _.template(PageBlog),
 
             events: {
-                // 'mouseover .images':'showCaption',
-                // 'mouseout .carousel1-caption':'hideCaption'
-                // 'mouseout .images':'hideCaptions'
+               
             },
 
 
             initialize: function () {
-                this.render();
+                
             },
 
             render: function () {
                 this.$el.html(this.template());
-                
-                this.show();
-
             },            
 
             //to remove sub nav bar
-            hide: function () {
+            hide: function () {                
+                $('.ph-blogPage').removeClass('fadeInLeftBig animated');
                 this.$el.hide();
             },
 
             show: function () {
                 this.$el.show();
+                this.render();
+                $('.ph-blogPage').addClass(' fadeInLeftBig animated');
             }
-
-
-
-
         });
 
         return PageBlog;
