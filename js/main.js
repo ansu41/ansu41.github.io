@@ -16,7 +16,9 @@ require.config({
         backbone: "lib/backbone.min",       
         text: "lib/text",
         constants: "utils/constants",
-        bootstrap:"lib/bootstrap.min"
+        bootstrap:"lib/bootstrap.min",
+        imageGallery:"lib/jquery.image-gallery",
+        loadImage:"lib/load-image"
     },
 
     shim: {
@@ -27,6 +29,9 @@ require.config({
         backbone: {
             deps: ["underscore", "jquery"],
             exports: "Backbone"
+        },
+        imageGallery:{
+            deps:["jquery","jqueryUi","loadImage"]
         }
     },
 
