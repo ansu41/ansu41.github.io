@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="turn.min.js"></script>
+<!-- <script type="text/javascript" src="jquery.anythingzoomer.js"></script>
+	<link rel="stylesheet" href="anythingzoomer.css"> -->
+<style type="text/css">
+body{
+	background-color:#fff;
+	/*background: url(bg.png) repeat;*/
+}
+#magazine{
+	width:1500px;
+	height:790px;
+	margin: auto;
+	overflow: hidden;
+}
+#magazine .turn-page{
+	background-color:#E4E5E5;
+	background-size:100% 100%;
+	/*max-height: 620px !important;*/
+	min-width: 750px !important;
+
+}
+#magazine .turn-page-wrapper{
+	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    min-width: 750px !important;
+}
+/*@-ms-viewport {
+width: device-width;
+}
+@media (min-width:220px){
+ 
+}
+@media (min-width:300px){
+
+}
+@media (min-width:460px){
+ 
+}
+@media (min-width:748px){ 
+ 
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+@media (min-width:1004px){
+	#magazine{
+		width:1004px;
+		height:720px;
+	}
+}
+@media (min-width:1260px){
+	 #magazine{
+		width:1260px;
+		height:720px;
+	}
+}
+@media (min-width:1600px){
+	  #magazine{
+		width:1600px;
+		height:1200px;
+	}
+}
+@media (min-width:2048px){
+	 #magazine{
+		width:2048px;
+		height:1400px;
+	}
+}
+@media (min-width:2880px){
+	 #magazine{
+		width:2880px;
+		height:1600px;
+	}
+}*/
+</style>
+</head>
+<body>
+
+<div id="magazine">
+	<div id="mag" style="background-image:url(images/page1.png);"></div>
+	<div style="background-image:url(images/page2.png);"></div>
+	<div style="background-image:url(images/page3.png);"></div>
+	<div style="background-image:url(images/page4.png);"></div>
+	<div style="background-image:url(images/page5.png);"></div>
+	<div style="background-image:url(images/page6.png);"></div>
+	<div style="background-image:url(images/page7.png);"></div>
+	<div style="background-image:url(images/page8.png);"></div>
+	<div style="background-image:url(images/page9.png);"></div>
+	<div style="background-image:url(images/page10.png);"></div>
+	<div style="background-image:url(images/page11.png);"></div>
+	<div style="background-image:url(images/page12.png);"></div>
+	<div style="background-image:url(images/page13.png);"></div>
+	<div style="background-image:url(images/page14.png);"></div>
+	<div style="background-image:url(images/page15.png);"></div>
+	<div style="background-image:url(images/page16.png);"></div>
+	<div style="background-image:url(images/page17.png);"></div>
+	<div style="background-image:url(images/page18.png);"></div>
+	<div style="background-image:url(images/page19.png);"></div>
+	<div style="background-image:url(images/page20.png);"></div>
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		// $('#mag').anythingZoomer({
+		// 	clone: true
+		// });
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
+	});
+
+</script>
+
+</body>
+</html>
