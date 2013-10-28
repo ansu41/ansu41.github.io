@@ -3,33 +3,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 <script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="turn.js"></script>
-<!-- <script type="text/javascript" src="jquery.anythingzoomer.js"></script>
-	<link rel="stylesheet" href="anythingzoomer.css"> -->
+<script type="text/javascript" src="turn.min.js"></script>
+<script type="text/javascript" src="jquery.anythingzoomer.js"></script>
+	<link rel="stylesheet" href="anythingzoomer.css">
 <style type="text/css">
 body{
 	background-color:#fff;
 	/*background: url(bg.png) repeat;*/
 }
 #magazine{
-	width:1300px;
-	height:620px;
+	width:1500px;
+	height:790px;
 	margin: auto;
 	overflow: hidden;
-	margin-top:10px;
 }
 #magazine .turn-page{
 	background-color:#E4E5E5;
 	background-size:100% 100%;
 	/*max-height: 620px !important;*/
-	/*min-width: 750px !important;*/
+	min-width: 750px !important;
 
 }
 #magazine .turn-page-wrapper{
 	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    /*min-width: 750px !important;*/
+    min-width: 750px !important;
 }
 /*@-ms-viewport {
 width: device-width;
@@ -79,12 +78,55 @@ width: device-width;
 		height:1600px;
 	}
 }*/
+@-webkit-keyframes oscillation
+{
+	from
+	{
+		-webkit-transform:rotate(-9deg);
+	}
+	to{
+		-webkit-transform:rotate(9deg);
+	}
+}
+ 
+@-moz-keyframes oscillation
+{
+	from{
+		-moz-transform:rotate(-9deg);
+	}
+	to{
+		-moz-transform:rotate(9deg);
+	}
+}
+
+ 
+.oscillate{  
+	-webkit-transform-origin:50% -40px;  
+	-moz-transform-origin:50% -40px;   
+	-webkit-animation: oscillation 1s ease-in-out infinite alternate;
+	-moz-animation: oscillation 1s ease-in-out infinite alternate;
+
+	width: 50px; 
+	height:60px;
+	z-index:0;
+	position:absolute;
+	top:0;
+	right:0;
+	-webkit-box-shadow: -1px 4px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: -1px 4px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: -1px 4px 2px rgba(0, 0, 0, 0.25);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
 </style>
 </head>
 <body>
 
 <div id="magazine">
-	<div id="mag" style="background-image:url(images/page1.png);"></div>
+	<div id="mag" style="background-image:url(images/page1.png);">
+		<div style="float:right; background-color:#E3282F; color:#ffffff; font-weight:bold; padding:10px;" class="oscillate">Drag to Open</div>
+	</div>
 	<div style="background-image:url(images/page2.png);"></div>
 	<div style="background-image:url(images/page3.png);"></div>
 	<div style="background-image:url(images/page4.png);"></div>
@@ -110,9 +152,9 @@ width: device-width;
 <script type="text/javascript">
 
 	$(window).ready(function() {
-		// $('#mag').anythingZoomer({
-		// 	clone: true
-		// });
+		$('#mag').anythingZoomer({
+			clone: true
+		});
 		$('#magazine').turn({
 							display: 'double',
 							acceleration: true,
