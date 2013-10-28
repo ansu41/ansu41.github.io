@@ -3,30 +3,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 <script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="turn.js"></script>
+<script type="text/javascript" src="turn.min.js"></script>
+<script type="text/javascript" src="jquery.anythingzoomer.js"></script>
+	<link rel="stylesheet" href="anythingzoomer.css">
 <style type="text/css">
 body{
 	background-color:#fff;
 	/*background: url(bg.png) repeat;*/
 }
 #magazine{
-	width:1300px;
-	height:620px;
+	width:1340px;
+	height:530px;
 	margin: auto;
 	overflow: hidden;
-	margin-top:20px;
+	margin-top:5%;
 }
 #magazine .turn-page{
 	background-color:#E4E5E5;
 	background-size:100% 100%;
-	/*max-height: 620px !important;*/
+	max-height: 530px !important;
 	
 
 }
 #magazine .turn-page-wrapper{
-	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
 
 }
 /*@-ms-viewport {
@@ -151,7 +153,9 @@ width: device-width;
 <script type="text/javascript">
 
 	$(window).ready(function() {
-		
+		$('#mag').anythingZoomer({
+			clone: true
+		});
 		$('#magazine').turn({
 							display: 'double',
 							acceleration: true,
